@@ -1,32 +1,35 @@
-<div class="row">
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Popular Movies</h3>
   </div>
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of popularList;let i = index" class="col-md-2">
+        <div *ngIf="i < 6">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" href="#">View Details</a></p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">In Theaters</h3>
   </div>
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
-  </div>
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
-  </div>
-  <div class="col-md-2">
-    <h2>Heading</h2>
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a></p>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of theaterList;let i = index" class="col-md-2">
+        <div *ngIf="i < 6">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" href="#">View Details</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
